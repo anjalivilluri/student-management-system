@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Student Management System</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static',
+    filename='main.css') }}">
+
+</head>
+
+<body>
+
+<!-- SIDEBAR -->
+
+<div class="sidebar">
+
+    
+    <a href="/dashboard">
+        🏠 Dashboard
+    </a>
+
+    <a href="/add_student">
+        ➕ Add Student
+    </a>
+
+    <a href="/student_list">
+        📋 Student List
+    </a>
+
+    <a href="/reports">
+        📊 Reports
+    </a>
+
+    <a href="/logout">
+        🚪 Logout
+    </a>
+
+</div>
+
+<!-- MAIN CONTENT -->
+
+<div class="main-content">
+
+    <div class="topbar">
+
+    <h2>🎓 Student Management System</h2>
+
+    <a href="/logout" class="logout-btn">
+        Logout
+    </a>
+
+</div>
+        <div class="admin-box">
+
+            Admin
+
+        </div>
+
+    </div>
+
+    {% block content %}
+
+    {% endblock %}
+
+</div>
+
+</body>
+</html>

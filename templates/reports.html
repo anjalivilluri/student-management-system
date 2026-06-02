@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>
+📊 Student Reports Dashboard
+</h1>
+
+<!-- REPORT CARDS -->
+
+<div class="report-cards">
+
+    <div class="card blue">
+
+        <h3>Total Students</h3>
+
+        <h1>
+            {{ total_students }}
+        </h1>
+
+    </div>
+
+    <div class="card green">
+
+        <h3>Male Students</h3>
+
+        <h1>
+            {{ male_students }}
+        </h1>
+
+    </div>
+
+    <div class="card orange">
+
+        <h3>Female Students</h3>
+
+        <h1>
+            {{ female_students }}
+        </h1>
+
+    </div>
+
+</div>
+
+<br>
+
+<!-- DEPARTMENT SUMMARY -->
+
+<h2>
+🏢 Department Wise Students
+</h2>
+
+<table>
+
+<tr>
+
+    <th>Department</th>
+
+    <th>Total Students</th>
+
+</tr>
+
+{% for dept in dept_stats %}
+
+<tr>
+
+    <td>
+        {{ dept.department }}
+    </td>
+
+    <td>
+        {{ dept.total }}
+    </td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+<br>
+
+<!-- STUDENT TABLE -->
+
+<h2>
+📋 Complete Student Records
+</h2>
+
+<table>
+
+<tr>
+
+    <th>S.No</th>
+    <th>Student ID</th>
+    <th>Name</th>
+    <th>Gender</th>
+    <th>Course</th>
+    <th>Department</th>
+    <th>Mobile</th>
+    <th>Email</th>
+    <th>Address</th>
+
+</tr>
+
+{% for student in students %}
+
+<tr>
+
+    <td>{{ loop.index }}</td>
+
+    <td>{{ student.student_id }}</td>
+
+    <td>{{ student.student_name }}</td>
+
+    <td>{{ student.gender }}</td>
+
+    <td>{{ student.course }}</td>
+
+    <td>{{ student.department }}</td>
+
+    <td>{{ student.mobile }}</td>
+
+    <td>{{ student.email }}</td>
+
+    <td>{{ student.address }}</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+{% endblock %}
